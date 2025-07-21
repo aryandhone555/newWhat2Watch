@@ -1,15 +1,20 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
 class Movie(models.Model):
     title = models.CharField(max_length=255)
     year = models.CharField(max_length=10)
     genre = models.CharField(max_length=255)
     language = models.CharField(max_length=100)
     cast = models.TextField()
-    imdb = models.FloatField(null=True, blank=True)
-    rt = models.FloatField(null=True, blank=True)
-    google = models.FloatField(null=True, blank=True)
+    # imdb = models.FloatField(null=True, blank=True)
+    # rt = models.FloatField(null=True, blank=True)
+    # google = models.FloatField(null=True, blank=True)
+    rt = models.CharField(max_length=10, null=True, blank=True)
+    imdb = models.CharField(max_length=10, null=True, blank=True)
+    google = models.CharField(max_length=10, null=True, blank=True)
+
     poster = models.URLField()
     added_by = models.CharField(max_length=255)
 
