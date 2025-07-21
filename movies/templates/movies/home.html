@@ -66,7 +66,11 @@
     <div class="col-md-3 mb-4 d-flex">
       <div class="card bg-secondary text-light hover-scale h-100 d-flex flex-column w-100">
         
-        <img src="{{ m.poster|default:'/static/images/default-poster.jpg' }}" class="card-img-top" alt="{{ m.title }}">
+        <!--img src="{{ m.poster|default:'/static/images/default-poster.jpg' }}" class="card-img-top" alt="{{ m.title }}"-->
+        <img src="{% if m.poster and m.poster != 'N/A' %}{{ m.poster }}{% else %}https://via.placeholder.com/300x450?text=No+Poster{% endif %}" 
+  class="card-img-top" 
+  alt="{{ m.title }}">
+
 
         <div class="card-body flex-grow-1 d-flex flex-column">
           <h5 class="card-title info">{{ m.title }}</h5>
