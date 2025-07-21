@@ -14,8 +14,8 @@ class Movie(models.Model):
     rt = models.CharField(max_length=10, null=True, blank=True)
     imdb = models.CharField(max_length=10, null=True, blank=True)
     google = models.CharField(max_length=10, null=True, blank=True)
-
-    poster = models.URLField(null=True, blank=True)
+    poster = models.CharField(max_length=500, null=True, blank=True)
+    # poster = models.URLField(null=True, blank=True)
     added_by = models.CharField(max_length=255)
 
     def __str__(self):
