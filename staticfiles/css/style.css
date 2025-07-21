@@ -1,0 +1,58 @@
+body {
+  background-color: #121212;
+  color: #f8f9fa;
+}
+
+.card {
+  background-color: #2c2c2c;
+  transition: 0.3s;
+  border: none;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(255,255,255,0.1);
+}
+
+.card:hover .info {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.my-movies-btn {
+  background-color: #e50914 !important;  /* Netflix red */
+  color: white !important;
+  border: none !important;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+
+.my-movies-btn:hover {
+  background-color: #b20710 !important;
+  transform: scale(1.05);
+  box-shadow: 0 0 8px rgba(229, 9, 20, 0.6);
+}
+
+.my-movies-btn.active {
+  background-color: #a1060e !important;
+  box-shadow: 0 0 12px rgba(255, 0, 0, 0.7);
+  transform: scale(1.07);
+}
+
+/* neon‑green button */
+.btn-neon{
+  background:#39ff14!important;
+  color:#000!important;
+  font-weight:bold;
+  border:none;
+  transition:transform .1s, box-shadow .1s;
+}
+.btn-neon:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 8px #39ff14;
+}
