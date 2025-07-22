@@ -48,7 +48,7 @@
     <div class="swiper-wrapper">
       {% for movie in movies %}
       <div class="swiper-slide">
-        <img src="/media/{{ movie.poster }}" class="img-fluid rounded" />
+        <img src="{{ m.poster }}" alt="{{ m.title }}" class="img-fluid rounded" />
         
       </div>
       {% endfor %}

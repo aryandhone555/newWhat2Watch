@@ -124,13 +124,17 @@ def add_movie(request):
 
     data = gemini_details(title)
     poster_url = data.pop("poster_url")
-    fname = f"{uuid.uuid4()}.jpg"
-    path = settings.MEDIA_ROOT / "posters" / fname
-    path.parent.mkdir(parents=True, exist_ok=True)
-    with open(path, "wb") as f:
-        f.write(requests.get(poster_url, timeout=10).content)
+    # fname = f"{uuid.uuid4()}.jpg"
+    # path = settings.MEDIA_ROOT / "posters" / fname
+    # path.parent.mkdir(parents=True, exist_ok=True)
+    # with open(path, "wb") as f:
+    #     f.write(requests.get(poster_url, timeout=10).content)
 
-    data["poster"] = f"posters/{fname}"
+    # data["poster"] = f"posters/{fname}"
+    data["poster"] = poster_url  # Directly: either a URL or 'N/A'
+    if not data.get("poster") or data["poster"] == "N/A":
+        data["poster"] = "https://media.istockphoto.com/id/1055079680/vector/black-linear-photo-camera-like-no-image-available.jpg?s=612x612&w=0&k=20&c=P1DebpeMIAtXj_ZbVsKVvg-duuL0v9DlrOZUvPG6UJk="
+
     add_movie_to_db(data, added_by=request.user.username)
     return redirect("home")
 
